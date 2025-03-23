@@ -8,7 +8,7 @@ categories:
         description: "Core capabilities and expertise in computational chemistry"
         projects:
           - projectName: "Advanced Material Analysis"
-            imageURL: "/images/projects/material-analysis.jpg"
+            imageURL: "/images/projects/material.png"
             shortDescription: "Cutting-edge techniques for analyzing complex chemical structures"
             longDescription: "Our Advanced Material Analysis project utilizes state-of-the-art spectroscopic methods to characterize novel materials at the molecular level. This capability enables us to identify structural properties, composition, and potential applications for new compounds developed in our labs."
             industry: ["Materials", "Manufacturing"]
@@ -23,7 +23,7 @@ categories:
                 url: "https://example.com/papers/advanced-material-analysis"
           
           - projectName: "Molecular Modeling Suite"
-            imageURL: "/images/projects/molecular-modeling.jpg"
+            imageURL: "/images/projects/modeling.png"
             shortDescription: "Computational tools for predicting molecular behavior"
             longDescription: "The Molecular Modeling Suite is a comprehensive set of computational tools developed in-house that allows our scientists to predict how molecules will interact, react, and behave under various conditions. This capability significantly reduces experimental time and costs by allowing us to simulate reactions before conducting physical experiments."
             industry: ["Pharmaceutical", "Biotechnology"]
@@ -42,7 +42,7 @@ categories:
         description: "Products developed by our computational chemistry team"
         projects:
           - projectName: "Catalyst Optimization Framework"
-            imageURL: "/images/projects/catalyst-optimization.jpg"
+            imageURL: "/images/projects/catalyst.png"
             shortDescription: "Systematic approach to developing more efficient catalysts"
             longDescription: "Our Catalyst Optimization Framework provides a methodical approach to designing, testing, and refining chemical catalysts. By combining computational modeling with high-throughput experimental validation, we've created a system that can rapidly identify promising catalyst candidates for specific industrial processes."
             industry: ["Chemical", "Energy", "Manufacturing"]
@@ -57,7 +57,7 @@ categories:
                 url: "/case-studies/catalyst-optimization"
           
           - projectName: "Green Synthesis Platform"
-            imageURL: "/images/projects/green-synthesis.jpg"
+            imageURL: "/images/projects/green.png"
             shortDescription: "Environmentally friendly chemical synthesis methods"
             longDescription: "The Green Synthesis Platform represents our commitment to sustainable chemistry. This project has developed a suite of reaction pathways and methodologies that minimize waste, reduce energy consumption, and eliminate hazardous substances from chemical manufacturing processes while maintaining or improving yield and purity."
             industry: ["Chemical", "Pharmaceutical", "Agriculture"]
@@ -85,7 +85,7 @@ categories:
         description: "Induced Fit Docking and Molecular Dynamics simulations"
         projects:
           - projectName: "Protein-Ligand Binding Analysis"
-            imageURL: "/images/projects/protein-ligand.jpg"
+            imageURL: "/images/projects/ifd.png"
             shortDescription: "Advanced analysis of protein-ligand interactions"
             longDescription: "This project focuses on the detailed analysis of protein-ligand binding interactions using induced fit docking and molecular dynamics simulations. By accurately modeling the flexibility of both the protein and ligand during binding, we can predict binding affinities and identify key interaction points for drug optimization."
             industry: ["Pharmaceutical", "Biotechnology"]
