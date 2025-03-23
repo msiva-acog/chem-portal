@@ -1,0 +1,226 @@
+categories:
+  internal:
+    name: "Internal"
+    description: "Our internal capabilities, products, and presales initiatives"
+    subcategories:
+      capabilities:
+        name: "Capabilities"
+        description: "Core capabilities and expertise in computational chemistry"
+        projects:
+          - projectName: "Advanced Material Analysis"
+            imageURL: "/images/projects/material-analysis.jpg"
+            shortDescription: "Cutting-edge techniques for analyzing complex chemical structures"
+            longDescription: "Our Advanced Material Analysis project utilizes state-of-the-art spectroscopic methods to characterize novel materials at the molecular level. This capability enables us to identify structural properties, composition, and potential applications for new compounds developed in our labs."
+            industry: ["Materials", "Manufacturing"]
+            function: ["Analysis", "Characterization"]
+            technology: ["Spectroscopy", "Machine Learning"]
+            links:
+              - title: "Technical Documentation"
+                url: "/docs/material-analysis"
+              - title: "Demo Dashboard"
+                url: "https://demo.example.com/material-analysis"
+              - title: "Research Paper"
+                url: "https://example.com/papers/advanced-material-analysis"
+          
+          - projectName: "Molecular Modeling Suite"
+            imageURL: "/images/projects/molecular-modeling.jpg"
+            shortDescription: "Computational tools for predicting molecular behavior"
+            longDescription: "The Molecular Modeling Suite is a comprehensive set of computational tools developed in-house that allows our scientists to predict how molecules will interact, react, and behave under various conditions. This capability significantly reduces experimental time and costs by allowing us to simulate reactions before conducting physical experiments."
+            industry: ["Pharmaceutical", "Biotechnology"]
+            function: ["Modeling", "Simulation"]
+            technology: ["Molecular Dynamics", "Quantum Mechanics"]
+            links:
+              - title: "User Guide"
+                url: "/docs/molecular-modeling"
+              - title: "Web Application"
+                url: "https://modeling.example.com"
+              - title: "Tutorial Video"
+                url: "https://example.com/videos/modeling-tutorial"
+      
+      products:
+        name: "Products"
+        description: "Products developed by our computational chemistry team"
+        projects:
+          - projectName: "Catalyst Optimization Framework"
+            imageURL: "/images/projects/catalyst-optimization.jpg"
+            shortDescription: "Systematic approach to developing more efficient catalysts"
+            longDescription: "Our Catalyst Optimization Framework provides a methodical approach to designing, testing, and refining chemical catalysts. By combining computational modeling with high-throughput experimental validation, we've created a system that can rapidly identify promising catalyst candidates for specific industrial processes."
+            industry: ["Chemical", "Energy", "Manufacturing"]
+            function: ["Optimization", "Design"]
+            technology: ["Machine Learning", "High-throughput Screening"]
+            links:
+              - title: "Process Documentation"
+                url: "/docs/catalyst-framework"
+              - title: "Results Dashboard"
+                url: "https://catalysts.example.com"
+              - title: "Case Studies"
+                url: "/case-studies/catalyst-optimization"
+          
+          - projectName: "Green Synthesis Platform"
+            imageURL: "/images/projects/green-synthesis.jpg"
+            shortDescription: "Environmentally friendly chemical synthesis methods"
+            longDescription: "The Green Synthesis Platform represents our commitment to sustainable chemistry. This project has developed a suite of reaction pathways and methodologies that minimize waste, reduce energy consumption, and eliminate hazardous substances from chemical manufacturing processes while maintaining or improving yield and purity."
+            industry: ["Chemical", "Pharmaceutical", "Agriculture"]
+            function: ["Synthesis", "Sustainability"]
+            technology: ["Green Chemistry", "Process Optimization"]
+            links:
+              - title: "Methodology Guide"
+                url: "/docs/green-synthesis"
+              - title: "Sustainability Metrics"
+                url: "https://green.example.com/metrics"
+              - title: "Implementation Examples"
+                url: "/examples/green-synthesis"
+      
+      presales:
+        name: "Presales"
+        description: "Presales initiatives and demonstrations"
+        projects: []
+
+  customer1:
+    name: "Customer 1"
+    description: "Collaborative projects with Customer 1 in molecular modeling"
+    subcategories:
+      ifd-md:
+        name: "IFD-MD"
+        description: "Induced Fit Docking and Molecular Dynamics simulations"
+        projects:
+          - projectName: "Protein-Ligand Binding Analysis"
+            imageURL: "/images/projects/protein-ligand.jpg"
+            shortDescription: "Advanced analysis of protein-ligand interactions"
+            longDescription: "This project focuses on the detailed analysis of protein-ligand binding interactions using induced fit docking and molecular dynamics simulations. By accurately modeling the flexibility of both the protein and ligand during binding, we can predict binding affinities and identify key interaction points for drug optimization."
+            industry: ["Pharmaceutical", "Biotechnology"]
+            function: ["Analysis", "Prediction"]
+            technology: ["Molecular Dynamics", "Docking"]
+            links:
+              - title: "Technical Report"
+                url: "/reports/protein-ligand"
+              - title: "Simulation Data"
+                url: "/data/protein-ligand"
+      
+      pka:
+        name: "PKa"
+        description: "Prediction of acid dissociation constants"
+        projects:
+          - projectName: "PKa Prediction Tool"
+            imageURL: "/images/projects/pka-prediction.jpg"
+            shortDescription: "Computational prediction of acid dissociation constants"
+            longDescription: "Our PKa prediction tool uses quantum mechanical calculations and machine learning to accurately predict acid dissociation constants for novel compounds. This capability is crucial for understanding drug solubility, bioavailability, and pharmacokinetics in early-stage drug discovery."
+            industry: ["Pharmaceutical", "Chemical"]
+            function: ["Prediction", "Property Calculation"]
+            technology: ["Quantum Mechanics", "Machine Learning"]
+            links:
+              - title: "Tool Documentation"
+                url: "/docs/pka-tool"
+              - title: "Validation Study"
+                url: "/studies/pka-validation"
+      
+      amination-modeling:
+        name: "Amination Modeling"
+        description: "Modeling of amination reactions for drug synthesis"
+        projects:
+          - projectName: "Catalytic Amination Pathways"
+            imageURL: "/images/projects/amination.jpg"
+            shortDescription: "Computational modeling of catalytic amination reactions"
+            longDescription: "This project involves detailed computational modeling of catalytic amination reactions, which are crucial for the synthesis of many pharmaceutical compounds. By understanding the reaction mechanisms and energy profiles, we can suggest optimal catalysts and conditions for specific amination transformations."
+            industry: ["Pharmaceutical", "Chemical"]
+            function: ["Reaction Modeling", "Mechanism Study"]
+            technology: ["Quantum Mechanics", "Transition State Theory"]
+            links:
+              - title: "Reaction Database"
+                url: "/database/amination"
+              - title: "Catalyst Screening Tool"
+                url: "/tools/catalyst-screening"
+      
+      bio-catalysis:
+        name: "Bio Catalysis"
+        description: "Enzyme-catalyzed reactions for pharmaceutical synthesis"
+        projects:
+          - projectName: "Enzyme Engineering Platform"
+            imageURL: "/images/projects/enzyme-engineering.jpg"
+            shortDescription: "Computational platform for enzyme engineering"
+            longDescription: "Our Enzyme Engineering Platform combines molecular modeling, quantum mechanics, and machine learning to predict and design enzyme variants with enhanced catalytic properties for specific reactions. This approach accelerates the development of biocatalysts for pharmaceutical synthesis."
+            industry: ["Pharmaceutical", "Biotechnology", "Chemical"]
+            function: ["Design", "Engineering"]
+            technology: ["Protein Modeling", "Machine Learning"]
+            links:
+              - title: "Platform Overview"
+                url: "/overview/enzyme-platform"
+              - title: "Case Studies"
+                url: "/cases/enzyme-engineering"
+
+  customer2:
+    name: "Customer 2"
+    description: "Ongoing projects with Customer 2 and Customer 3"
+    subcategories:
+      customer2-projects:
+        name: "Customer 2 Projects"
+        description: "Collaborative projects with Customer 2"
+        projects:
+          - projectName: "Drug Solubility Prediction"
+            imageURL: "/images/projects/drug-solubility.jpg"
+            shortDescription: "Computational prediction of drug solubility"
+            longDescription: "This collaborative project with Customer 2 focuses on developing advanced computational methods for predicting the solubility of drug candidates in various solvents and formulations. Accurate solubility prediction is essential for formulation development and can significantly accelerate the drug development process."
+            industry: ["Pharmaceutical"]
+            function: ["Prediction", "Property Calculation"]
+            technology: ["Machine Learning", "Statistical Modeling"]
+            links:
+              - title: "Method Description"
+                url: "/methods/solubility-prediction"
+              - title: "Validation Results"
+                url: "/results/solubility-validation"
+      
+      customer3-projects:
+        name: "Customer 3 Projects"
+        description: "Collaborative projects with Customer 3"
+        projects:
+          - projectName: "Adhesive Formulation Optimization"
+            imageURL: "/images/projects/adhesive-formulation.jpg"
+            shortDescription: "Computational optimization of adhesive formulations"
+            longDescription: "In collaboration with Customer 3, this project applies computational chemistry and machine learning to optimize adhesive formulations for specific applications. By modeling the molecular interactions between adhesive components and substrates, we can predict performance characteristics and suggest improved formulations."
+            industry: ["Materials", "Manufacturing", "Consumer Products"]
+            function: ["Optimization", "Formulation"]
+            technology: ["Molecular Modeling", "Machine Learning"]
+            links:
+              - title: "Optimization Framework"
+                url: "/framework/adhesive-optimization"
+              - title: "Performance Metrics"
+                url: "/metrics/adhesive-performance"
+
+  potential:
+    name: "Potential"
+    description: "Future directions including intelligent datalake and demos"
+    subcategories:
+      intelligent-datalake:
+        name: "Intelligent Datalake"
+        description: "Advanced data management and analysis platform"
+        projects:
+          - projectName: "Chemical Data Integration Platform"
+            imageURL: "/images/projects/data-integration.jpg"
+            shortDescription: "Unified platform for chemical data integration and analysis"
+            longDescription: "The Chemical Data Integration Platform is a comprehensive solution for collecting, organizing, and analyzing diverse chemical data sources. By integrating experimental results, computational predictions, literature data, and proprietary information, this platform enables more effective data-driven decision making in research and development."
+            industry: ["Cross-industry"]
+            function: ["Data Management", "Analysis"]
+            technology: ["Big Data", "AI/ML"]
+            links:
+              - title: "Platform Architecture"
+                url: "/architecture/data-integration"
+              - title: "Use Cases"
+                url: "/cases/data-integration"
+      
+      demos:
+        name: "Demos"
+        description: "Demonstration projects and proof-of-concept implementations"
+        projects:
+          - projectName: "Interactive Molecular Visualization"
+            imageURL: "/images/projects/molecular-visualization.jpg"
+            shortDescription: "Interactive 3D visualization of molecular structures and properties"
+            longDescription: "This demonstration project showcases our capabilities in interactive 3D visualization of molecular structures and properties. Using WebGL and modern web technologies, we've created an intuitive interface for exploring complex molecular systems, visualizing electron densities, and analyzing binding interactions."
+            industry: ["Cross-industry", "Education"]
+            function: ["Visualization", "Education"]
+            technology: ["WebGL", "3D Rendering"]
+            links:
+              - title: "Live Demo"
+                url: "/demo/molecular-visualization"
+              - title: "Technical Details"
+                url: "/details/visualization-technology"
+
