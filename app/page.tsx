@@ -25,19 +25,31 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="flex flex-col justify-center space-y-8 max-w-xl mx-auto lg:mx-0">
               <h1 className="text-5xl font-bold tracking-tight sm:text-6xl text-center lg:text-left">
-                Opening new worlds for molecular discovery
+              Igniva™ for
+              Chemistry: AI/ML &
+              GenAI powered
+              Computational
+              chemistry for
+              Molecular & Material
               </h1>
               <p className="text-xl text-muted-foreground text-center lg:text-left">
-                Our computational chemistry platform, powered by advanced physics, is transforming the way materials and
-                therapeutics are discovered to make innovations of the future achievable, today.
+              Our biology aware chemistry
+              Deep Science platform, rooted in
+              first principles based methods
+              viz. Molecular Dynamics (MD),
+              Quantum Mechanics (QM)
+              embracing advances in Deep
+              Tech. viz. AI/ML, GenAI, GPU
+              acceleration for high throughput
               </p>
               <div className="pt-6 flex justify-center lg:justify-start">
                 <Button
                   size="lg"
-                  className="bg-primary/20 hover:bg-primary/30 border border-primary/50 text-white"
+                  // variant={"default"}
+                  // className="bg-primary/20 hover:bg-primary/30 border border-primary/50 text-white"
                   asChild
                 >
-                  <Link href="/categories">
+                  <Link href="/modules">
                     EXPLORE OUR PLATFORM <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
@@ -51,7 +63,7 @@ export default function Home() {
       </section>
 
       {/* Categories section */}
-      <section className="bg-background py-24">
+      {/* <section className="bg-background py-24">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">Our Research Areas</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -69,7 +81,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }

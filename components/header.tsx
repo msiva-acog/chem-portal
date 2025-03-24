@@ -33,7 +33,7 @@ export default function Header() {
   // Base navigation items
   const baseNavItems = [
     { name: "Home", href: "/" },
-    { name: "Categories", href: "/categories" },
+    { name: "Modules", href: "/modules" },
   ]
 
   // Add category items

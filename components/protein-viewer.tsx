@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import * as NGL from "ngl";
 import { Loader2 } from "lucide-react"
 
 export default function ProteinViewer() {
@@ -19,7 +20,7 @@ export default function ProteinViewer() {
     const initViewer = async () => {
       try {
         // Dynamically import NGL
-        const NGL = await import("ngl")
+        // const NGL = await import("ngl")
 
         // Create NGL Stage object
         const stage = new NGL.Stage(containerRef.current, {

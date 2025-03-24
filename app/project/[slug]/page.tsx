@@ -13,8 +13,8 @@ interface ProjectPageProps {
   }
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const { slug } = params
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { slug } = await params
   const project = findProjectBySlug(slug)
 
   if (!project) {
@@ -24,8 +24,8 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   return (
     <div className="container mx-auto py-8 space-y-8">
       <Button variant="outline" asChild className="mb-8">
-        <Link href="/categories">
-          <ArrowLeft className="mr-2 h-4 w-4" /> Back to Projects
+        <Link href="/modules">
+          <ArrowLeft className="mr-2 h-4 w-4" /> Back to Modules
         </Link>
       </Button>
 

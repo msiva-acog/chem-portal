@@ -323,10 +323,10 @@ export default function CategoryExplorer({
     <div className="container mx-auto py-12">
       <div className="flex flex-col space-y-8">
         <div>
-          <h1 className="text-4xl font-bold">Project Explorer</h1>
-          <p className="text-xl text-muted-foreground mt-2 max-w-3xl">
+          <h1 className="text-4xl font-bold">Modules catalog</h1>
+          {/* <p className="text-xl text-muted-foreground mt-2 max-w-3xl">
             Explore our comprehensive collection of computational chemistry projects organized by different parameters.
-          </p>
+          </p> */}
         </div>
 
         {/* Search and organization controls */}
@@ -336,7 +336,7 @@ export default function CategoryExplorer({
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
               <Input
                 type="search"
-                placeholder="Search projects..."
+                placeholder="Find modules..."
                 className="pl-8"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -531,7 +531,7 @@ export default function CategoryExplorer({
         )}
 
         {/* Stats */}
-        <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {/* <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <Card>
             <CardHeader className="pb-2">
               <CardTitle className="text-lg">Categories</CardTitle>
@@ -564,7 +564,7 @@ export default function CategoryExplorer({
               <p className="text-3xl font-bold">{initialTechnologies.length}</p>
             </CardContent>
           </Card>
-        </div>
+        </div> */}
 
         {/* Recently viewed */}
         {recentlyViewed.length > 0 && (
