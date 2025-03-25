@@ -1,11 +1,11 @@
 import { Suspense } from "react"
-import { getAllCategories, getAllProjects, getAllIndustries, getAllFunctions, getAllTechnologies } from "@/lib/projects"
+import { getAllProjects, getAllIndustries, getAllFunctions, getAllTechnologies } from "@/lib/projects"
 import CategoryExplorer from "@/components/category-explorer"
 import { Skeleton } from "@/components/ui/skeleton"
 
 export default function CategoriesPage() {
   // Load data on the server
-  const categories = getAllCategories()
+  // const categories = getAllCategories()
   const projects = getAllProjects()
   const industries = getAllIndustries()
   const functions = getAllFunctions()
@@ -14,7 +14,7 @@ export default function CategoriesPage() {
   return (
     <Suspense fallback={<CategoriesLoading />}>
       <CategoryExplorer
-        initialCategories={categories}
+        // initialCategories={categories}
         initialProjects={projects}
         initialIndustries={industries}
         initialFunctions={functions}

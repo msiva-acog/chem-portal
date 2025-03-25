@@ -8,20 +8,15 @@ export interface ProjectLink {
 }
 
 export interface Project {
-  projectName: string
+  moduleName: string
   imageURL: string
+  status: string
   shortDescription: string
   longDescription: string
   industry?: string[]
   function?: string[]
   technology?: string[]
   links: ProjectLink[]
-}
-
-export interface Subcategory {
-  name: string
-  description: string
-  projects: Project[]
 }
 
 export interface Category {
@@ -32,10 +27,20 @@ export interface Category {
   }
 }
 
+export interface Subcategory {
+  name: string
+  description: string
+  projects: Project[]
+}
+
 export interface ProjectsData {
-  categories: {
-    [key: string]: Category
+  modules: {
+    [key: string]: Project
   }
+}
+
+export interface CategoriesData {
+  [key: string]: Category
 }
 
 // This function is only called on the server side
@@ -46,102 +51,46 @@ export function getProjectsData(): ProjectsData {
   return data
 }
 
+// This function is only called on the server side
+export function getCategoriesData(): CategoriesData {
+  const filePath = path.join(process.cwd(), "data", "categories.yaml")
+  const fileContents = fs.readFileSync(filePath, "utf8")
+  const data = yaml.load(fileContents) as CategoriesData
+  return data
+}
+
 // Server-side functions
-export function getAllCategories() {
-  const data = getProjectsData()
-  return data.categories
-}
-
-export function getCategory(categoryId: string) {
-  const data = getProjectsData()
-  return data.categories[categoryId]
-}
-
-export function getSubcategory(categoryId: string, subcategoryId: string) {
-  const category = getCategory(categoryId)
-  if (!category) return null
-  return category.subcategories[subcategoryId]
-}
-
-export function getProjectsForSubcategory(categoryId: string, subcategoryId: string) {
-  const subcategory = getSubcategory(categoryId, subcategoryId)
-  if (!subcategory) return []
-  return subcategory.projects
-}
-
 export function getAllProjects() {
   const data = getProjectsData()
-  const allProjects: Project[] = []
-
-  Object.keys(data.categories).forEach((categoryId) => {
-    const category = data.categories[categoryId]
-    Object.keys(category.subcategories).forEach((subcategoryId) => {
-      const subcategory = category.subcategories[subcategoryId]
-      allProjects.push(...subcategory.projects)
-    })
-  })
-
-  return allProjects
+  return Object.values(data.modules)
 }
 
 export function getProjectByName(name: string): Project | null {
   const allProjects = getAllProjects()
-  return allProjects.find((project) => project.projectName === name) || null
+  return allProjects.find((project) => project.moduleName === name) || null
 }
 
 export function findProjectBySlug(slug: string): Project | null {
   const allProjects = getAllProjects()
   return (
     allProjects.find((project) => {
-      const projectSlug = project.projectName.toLowerCase().replace(/\s+/g, "-")
+      const projectSlug = project.moduleName.toLowerCase().replace(/\s+/g, "-")
       return projectSlug === slug
     }) || null
   )
 }
 
-export function getInternalProjects() {
-  const data = getProjectsData()
-  const internalCategory = data.categories["internal"]
-  if (!internalCategory) return { capabilities: [], products: [] }
-
-  const capabilities = Object.values(internalCategory.subcategories["capabilities"]?.projects || [])
-  const products = Object.values(internalCategory.subcategories["products"]?.projects || [])
-
-  return { capabilities, products }
+export function getCompletedProjects() {
+  const allProjects = getAllProjects()
+  return allProjects.filter((project) => project.status === "completed")
 }
 
-export function getPipelineProjects() {
-  const data = getProjectsData()
-  const pipelineCategory = data.categories["customer2"]
-  if (!pipelineCategory) return []
-
-  let projects: Project[] = []
-  for (const subcategoryKey in pipelineCategory.subcategories) {
-    const subcategory = pipelineCategory.subcategories[subcategoryKey]
-    if (subcategory && subcategory.projects) {
-      projects = projects.concat(subcategory.projects)
-    }
-  }
-  return projects
-}
-
-export function getPotentialProjects() {
-  const data = getProjectsData()
-  const potentialCategory = data.categories["potential"]
-  if (!potentialCategory) return []
-
-  let projects: Project[] = []
-  for (const subcategoryKey in potentialCategory.subcategories) {
-    const subcategory = potentialCategory.subcategories[subcategoryKey]
-    if (subcategory && subcategory.projects) {
-      projects = projects.concat(subcategory.projects)
-    }
-  }
-  return projects
+export function getWorkInProgressProjects() {
+  const allProjects = getAllProjects()
+  return allProjects.filter((project) => project.status === "work-in-progress")
 }
 
 // New functions to support organization by different parameters
-
 export function getAllIndustries(): string[] {
   const allProjects = getAllProjects()
   const industriesSet = new Set<string>()
@@ -182,22 +131,16 @@ export function getAllTechnologies(): string[] {
 }
 
 export function getProjectsByOrganization(
-  organizationType: "all" | "industry" | "function" | "technology",
+  organizationType: "all" | "industry" | "function" | "technology" | "status",
 ): Record<string, Project[]> {
   const allProjects = getAllProjects()
   const organizedProjects: Record<string, Project[]> = {}
 
   if (organizationType === "all") {
-    const data = getProjectsData()
-    Object.entries(data.categories).forEach(([categoryId, category]) => {
-      console.log(categoryId);
-      
-      organizedProjects[category.name] = []
-
-      Object.values(category.subcategories).forEach((subcategory) => {
-        organizedProjects[category.name].push(...subcategory.projects)
-      })
-    })
+    organizedProjects["All Modules"] = allProjects
+  } else if (organizationType === "status") {
+    organizedProjects["Completed"] = allProjects.filter((project) => project.status === "completed")
+    organizedProjects["Work in Progress"] = allProjects.filter((project) => project.status === "work-in-progress")
   } else {
     allProjects.forEach((project) => {
       let values: string[] = []
@@ -219,7 +162,51 @@ export function getProjectsByOrganization(
     })
   }
 
-  // Sort the keys alphabetically
+  // Sort the keys alphabetically, but ensure "Completed" comes before "Work in Progress"
+  if (organizationType === "status") {
+    return organizedProjects
+  }
+
   return Object.fromEntries(Object.entries(organizedProjects).sort(([a], [b]) => a.localeCompare(b)))
+}
+
+export function getAllCategories(): Record<string, Category> {
+  const data = getCategoriesData()
+  return data
+}
+
+export function getInternalProjects(): { capabilities: Project[]; products: Project[] } {
+  const allProjects = getAllProjects()
+  return {
+    capabilities: allProjects.slice(0, 3),
+    products: allProjects.slice(3, 6),
+  }
+}
+
+export function getPipelineProjects(): Project[] {
+  const allProjects = getAllProjects()
+  return allProjects.slice(6, 9)
+}
+
+export function getPotentialProjects(): Project[] {
+  const allProjects = getAllProjects()
+  return allProjects.slice(9, 12)
+}
+
+export function getCategory(categoryId: string): Category | undefined {
+  const categories = getAllCategories()
+  return categories[categoryId]
+}
+
+export function getSubcategory(categoryId: string, subcategoryId: string): Subcategory | undefined {
+  const category = getCategory(categoryId)
+  if (!category) return undefined
+  return category.subcategories[subcategoryId]
+}
+
+export function getProjectsForSubcategory(categoryId: string, subcategoryId: string): Project[] {
+  const subcategory = getSubcategory(categoryId, subcategoryId)
+  if (!subcategory) return []
+  return subcategory.projects
 }
 

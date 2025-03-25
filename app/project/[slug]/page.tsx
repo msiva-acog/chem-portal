@@ -37,7 +37,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <div className="relative aspect-video overflow-hidden rounded-lg">
           <Image
             src={project.imageURL || "/placeholder.svg?height=400&width=600"}
-            alt={project.projectName}
+            alt={project.moduleName}
             fill
             className="object-cover"
             priority
@@ -46,7 +46,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
         <div className="space-y-6">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">{project.projectName}</h1>
+            <h1 className="text-3xl font-bold tracking-tight">{project.moduleName}</h1>
             <p className="text-xl text-muted-foreground mt-2">{project.shortDescription}</p>
           </div>
 
@@ -77,7 +77,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               </div>
             )}
 
-            {project.technology && (
+            {/* {project.technology && (
               <div className="space-y-2 w-full">
                 <h3 className="text-sm font-medium">Technologies:</h3>
                 <div className="flex flex-wrap gap-2">
@@ -88,7 +88,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   ))}
                 </div>
               </div>
-            )}
+            )} */}
           </div>
 
           <div className="space-y-4">

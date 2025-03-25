@@ -11,8 +11,11 @@ RUN npm install
 # Copy application files
 COPY . .
 
+#Build the production code
+RUN npm run build
+
 # Expose port 3001 (you can use any port you prefer)
 EXPOSE 3005
 
 # Start the development server
-CMD ["npm", "run", "dev"]
+CMD ["npm", "start"]
