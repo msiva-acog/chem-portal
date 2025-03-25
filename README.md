@@ -41,6 +41,11 @@ npm run dev
 ```bash
 npm start
 ```
+## configuration
+one yaml config file has given, you can find this file in data folder.
+the entire module data is being configured from yaml file
+if you want to add new modules or make changes to the modules, just simply add those modules to the yaml file
+configuration will take care of everything
 
 # Usage
 
