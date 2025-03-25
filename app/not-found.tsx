@@ -8,7 +8,7 @@ export default function NotFound() {
       <AlertTriangle className="h-16 w-16 text-yellow-500 mb-6" />
       <h1 className="text-4xl font-bold mb-4">Project Not Found</h1>
       <p className="text-xl text-muted-foreground mb-8">
-        The project you're looking for doesn't exist or has been moved.
+        The project you&apos;re looking for doesn&apos;t exist or has been moved.
       </p>
       <Button asChild>
         <Link href="/">Return to Home</Link>

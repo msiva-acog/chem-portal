@@ -1,24 +1,18 @@
 "use client"
 
-import { useState, useEffect, useMemo, useRef } from "react"
+import { useState, useEffect, useMemo} from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Search, Filter, ChevronDown, ChevronRight, Share2, Bookmark, BookmarkCheck, Clock } from "lucide-react"
+import { Search, Filter, ChevronDown, ChevronRight, Share2, Bookmark, BookmarkCheck} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Label } from "@/components/ui/label"
 import type { Project, Category } from "@/lib/projects"
 import { useToast } from "@/hooks/use-toast"
 
-type OrganizationType = "category" | "industry" | "function" | "technology"
+type OrganizationType = "all" | "industry" | "function" | "technology"
 type ViewMode = "list" | "grid" | "compact"
 
 interface CategoryExplorerProps {
@@ -32,12 +26,9 @@ interface CategoryExplorerProps {
 export default function CategoryExplorer({
   initialCategories,
   initialProjects,
-  initialIndustries,
-  initialFunctions,
-  initialTechnologies,
 }: CategoryExplorerProps) {
   // State
-  const [organizationType, setOrganizationType] = useState<OrganizationType>("category")
+  const [organizationType, setOrganizationType] = useState<OrganizationType>("all")
   const [viewMode, setViewMode] = useState<ViewMode>("list")
   const [searchQuery, setSearchQuery] = useState("")
   const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>({})
@@ -56,8 +47,6 @@ export default function CategoryExplorer({
   const [isLoading, setIsLoading] = useState(true)
   const { toast } = useToast()
 
-  // Refs
-  const statsRef = useRef<HTMLDivElement>(null)
 
   // Initialize data
   useEffect(() => {
@@ -104,9 +93,11 @@ export default function CategoryExplorer({
     // Client-side implementation of getProjectsByOrganization
     const result: Record<string, Project[]> = {}
 
-    if (organizationType === "category") {
+    if (organizationType === "all") {
       Object.entries(initialCategories).forEach(([categoryId, category]) => {
         result[category.name] = []
+        console.log(categoryId);
+        
 
         Object.values(category.subcategories).forEach((subcategory) => {
           result[category.name].push(...subcategory.projects)
@@ -260,12 +251,6 @@ export default function CategoryExplorer({
   // Reset all filters
   const resetFilters = () => {
     setSearchQuery("")
-    setShowOnlyFavorites(false)
-    setSelectedFilters({
-      industry: [],
-      function: [],
-      technology: [],
-    })
   }
 
   // Toggle a filter value
@@ -280,39 +265,39 @@ export default function CategoryExplorer({
   }
 
   // Calculate statistics
-  const statistics = useMemo(() => {
-    const totalProjects = initialProjects.length
-    const projectsByIndustry: Record<string, number> = {}
-    const projectsByFunction: Record<string, number> = {}
-    const projectsByTechnology: Record<string, number> = {}
+  // const statistics = useMemo(() => {
+  //   const totalProjects = initialProjects.length
+  //   const projectsByIndustry: Record<string, number> = {}
+  //   const projectsByFunction: Record<string, number> = {}
+  //   const projectsByTechnology: Record<string, number> = {}
 
-    initialProjects.forEach((project) => {
-      if (project.industry) {
-        project.industry.forEach((ind) => {
-          projectsByIndustry[ind] = (projectsByIndustry[ind] || 0) + 1
-        })
-      }
+  //   initialProjects.forEach((project) => {
+  //     if (project.industry) {
+  //       project.industry.forEach((ind) => {
+  //         projectsByIndustry[ind] = (projectsByIndustry[ind] || 0) + 1
+  //       })
+  //     }
 
-      if (project.function) {
-        project.function.forEach((func) => {
-          projectsByFunction[func] = (projectsByFunction[func] || 0) + 1
-        })
-      }
+  //     if (project.function) {
+  //       project.function.forEach((func) => {
+  //         projectsByFunction[func] = (projectsByFunction[func] || 0) + 1
+  //       })
+  //     }
 
-      if (project.technology) {
-        project.technology.forEach((tech) => {
-          projectsByTechnology[tech] = (projectsByTechnology[tech] || 0) + 1
-        })
-      }
-    })
+  //     if (project.technology) {
+  //       project.technology.forEach((tech) => {
+  //         projectsByTechnology[tech] = (projectsByTechnology[tech] || 0) + 1
+  //       })
+  //     }
+  //   })
 
-    return {
-      totalProjects,
-      projectsByIndustry,
-      projectsByFunction,
-      projectsByTechnology,
-    }
-  }, [initialProjects])
+  //   return {
+  //     totalProjects,
+  //     projectsByIndustry,
+  //     projectsByFunction,
+  //     projectsByTechnology,
+  //   }
+  // }, [initialProjects])
 
   // Render loading state
   if (isLoading) {
@@ -322,12 +307,12 @@ export default function CategoryExplorer({
   return (
     <div className="container mx-auto py-12">
       <div className="flex flex-col space-y-8">
-        <div>
-          <h1 className="text-4xl font-bold">Modules catalog</h1>
-          {/* <p className="text-xl text-muted-foreground mt-2 max-w-3xl">
+        {/* <div>
+          <h1 className="text-4xl font-bold">Project Explorer</h1>
+          <p className="text-xl text-muted-foreground mt-2 max-w-3xl">
             Explore our comprehensive collection of computational chemistry projects organized by different parameters.
-          </p> */}
-        </div>
+          </p>
+        </div> */}
 
         {/* Search and organization controls */}
         <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
@@ -336,7 +321,7 @@ export default function CategoryExplorer({
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
               <Input
                 type="search"
-                placeholder="Find modules..."
+                placeholder="Search projects..."
                 className="pl-8"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -354,99 +339,12 @@ export default function CategoryExplorer({
                 <SelectValue placeholder="Organization Type" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="category">Category</SelectItem>
+                <SelectItem value="all">Default</SelectItem>
                 <SelectItem value="industry">Industry</SelectItem>
                 <SelectItem value="function">Function</SelectItem>
                 <SelectItem value="technology">Technology</SelectItem>
               </SelectContent>
             </Select>
-
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="icon">
-                  <Filter className="h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56" align="end">
-                <div className="p-2">
-                  <div className="font-medium mb-2">Filters</div>
-
-                  <div className="space-y-4">
-                    <div>
-                      <div className="text-sm font-medium mb-1">Show only favorites</div>
-                      <div className="flex items-center space-x-2">
-                        <Checkbox
-                          id="favorites"
-                          checked={showOnlyFavorites}
-                          onCheckedChange={() => setShowOnlyFavorites(!showOnlyFavorites)}
-                        />
-                        <Label htmlFor="favorites">Favorites</Label>
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="text-sm font-medium mb-1">Industries</div>
-                      <div className="space-y-1 max-h-32 overflow-y-auto">
-                        {initialIndustries.map((industry) => (
-                          <div key={industry} className="flex items-center space-x-2">
-                            <Checkbox
-                              id={`industry-${industry}`}
-                              checked={selectedFilters.industry.includes(industry)}
-                              onCheckedChange={() => toggleFilter("industry", industry)}
-                            />
-                            <Label htmlFor={`industry-${industry}`}>{industry}</Label>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="text-sm font-medium mb-1">Functions</div>
-                      <div className="space-y-1 max-h-32 overflow-y-auto">
-                        {initialFunctions.map((func) => (
-                          <div key={func} className="flex items-center space-x-2">
-                            <Checkbox
-                              id={`function-${func}`}
-                              checked={selectedFilters.function.includes(func)}
-                              onCheckedChange={() => toggleFilter("function", func)}
-                            />
-                            <Label htmlFor={`function-${func}`}>{func}</Label>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="text-sm font-medium mb-1">Technologies</div>
-                      <div className="space-y-1 max-h-32 overflow-y-auto">
-                        {initialTechnologies.map((tech) => (
-                          <div key={tech} className="flex items-center space-x-2">
-                            <Checkbox
-                              id={`technology-${tech}`}
-                              checked={selectedFilters.technology.includes(tech)}
-                              onCheckedChange={() => toggleFilter("technology", tech)}
-                            />
-                            <Label htmlFor={`technology-${tech}`}>{tech}</Label>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <Button variant="outline" size="sm" onClick={resetFilters} className="w-full">
-                      Reset Filters
-                    </Button>
-                  </div>
-                </div>
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            <Tabs value={viewMode} onValueChange={(value) => setViewMode(value as ViewMode)}>
-              <TabsList>
-                <TabsTrigger value="list">List</TabsTrigger>
-                <TabsTrigger value="grid">Grid</TabsTrigger>
-                <TabsTrigger value="compact">Compact</TabsTrigger>
-              </TabsList>
-            </Tabs>
           </div>
         </div>
 
@@ -567,7 +465,7 @@ export default function CategoryExplorer({
         </div> */}
 
         {/* Recently viewed */}
-        {recentlyViewed.length > 0 && (
+        {/* {recentlyViewed.length > 0 && (
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Clock className="h-5 w-5 text-muted-foreground" />
@@ -609,15 +507,15 @@ export default function CategoryExplorer({
               })}
             </div>
           </div>
-        )}
+        )} */}
 
         {/* Project listing */}
         <div className="space-y-6">
           {Object.keys(filteredOrganizedProjects).length === 0 ? (
             <div className="bg-muted/30 p-12 rounded-lg text-center">
               <h2 className="text-2xl font-semibold mb-4">No Projects Found</h2>
-              <p className="text-muted-foreground mb-6">Try adjusting your search query or filters.</p>
-              <Button onClick={resetFilters}>Reset Filters</Button>
+              <p className="text-muted-foreground mb-6">Try adjusting your search query.</p>
+              <Button onClick={() => setSearchQuery("")}>Clear Search</Button>
             </div>
           ) : (
             Object.entries(filteredOrganizedProjects).map(([group, projects]) => (
@@ -637,257 +535,84 @@ export default function CategoryExplorer({
                   </div>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
-                  {viewMode === "list" && (
-                    <div className="divide-y">
-                      {projects.map((project, index) => (
-                        <div key={index} className="p-4 hover:bg-muted/10 transition-colors">
-                          <div className="flex flex-col md:flex-row gap-4">
-                            <div className="relative h-40 w-full md:w-48 rounded-md overflow-hidden">
-                              <Image
-                                src={project.imageURL || "/placeholder.svg?height=160&width=200"}
-                                alt={project.projectName}
-                                fill
-                                className="object-cover"
-                              />
-                            </div>
-                            <div className="flex-1 space-y-3">
-                              <div className="flex items-center justify-between">
-                                <h3 className="text-lg font-semibold">{project.projectName}</h3>
-                                <div className="flex items-center gap-2">
-                                  <TooltipProvider>
-                                    <Tooltip>
-                                      <TooltipTrigger asChild>
-                                        <Button
-                                          variant="ghost"
-                                          size="icon"
-                                          onClick={() => toggleFavorite(project.projectName)}
-                                        >
-                                          {favorites.includes(project.projectName) ? (
-                                            <BookmarkCheck className="h-5 w-5 text-primary" />
-                                          ) : (
-                                            <Bookmark className="h-5 w-5" />
-                                          )}
-                                        </Button>
-                                      </TooltipTrigger>
-                                      <TooltipContent>
-                                        {favorites.includes(project.projectName)
-                                          ? "Remove from favorites"
-                                          : "Add to favorites"}
-                                      </TooltipContent>
-                                    </Tooltip>
-                                  </TooltipProvider>
-
-                                  <TooltipProvider>
-                                    <Tooltip>
-                                      <TooltipTrigger asChild>
-                                        <Button variant="ghost" size="icon" onClick={() => shareProject(project)}>
-                                          <Share2 className="h-5 w-5" />
-                                        </Button>
-                                      </TooltipTrigger>
-                                      <TooltipContent>Share project</TooltipContent>
-                                    </Tooltip>
-                                  </TooltipProvider>
+                  <div className="p-4">
+                    <table className="w-full">
+                      <thead>
+                        <tr className="border-b">
+                          <th className="text-left py-2 px-4 font-medium">Project</th>
+                          <th className="text-left py-2 px-4 font-medium hidden md:table-cell">Industry</th>
+                          <th className="text-left py-2 px-4 font-medium hidden lg:table-cell">Function</th>
+                          <th className="text-right py-2 px-4 font-medium">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {projects.map((project, index) => (
+                          <tr key={index} className="border-b hover:bg-muted/10">
+                            <td className="py-2 px-4">
+                              <div className="flex items-center gap-3">
+                                <div className="relative h-10 w-10 rounded overflow-hidden">
+                                  <Image
+                                    src={project.imageURL || "/placeholder.svg?height=40&width=40"}
+                                    alt={project.projectName}
+                                    fill
+                                    className="object-cover"
+                                  />
+                                </div>
+                                <div>
+                                  <div className="font-medium">{project.projectName}</div>
+                                  <div className="text-sm text-muted-foreground line-clamp-1">
+                                    {project.shortDescription}
+                                  </div>
                                 </div>
                               </div>
-                              <p className="text-muted-foreground">{project.shortDescription}</p>
-
-                              <div className="flex flex-wrap gap-2">
+                            </td>
+                            <td className="py-2 px-4 hidden md:table-cell">
+                              <div className="flex flex-wrap gap-1">
                                 {project.industry &&
-                                  project.industry.map((ind, i) => (
-                                    <Badge key={i} variant="secondary" className="bg-blue-500/10">
+                                  project.industry.slice(0, 2).map((ind, i) => (
+                                    <Badge key={i} variant="secondary" className="bg-blue-500/10 text-xs">
                                       {ind}
                                     </Badge>
                                   ))}
+                              </div>
+                            </td>
+                            <td className="py-2 px-4 hidden lg:table-cell">
+                              <div className="flex flex-wrap gap-1">
                                 {project.function &&
-                                  project.function.map((func, i) => (
-                                    <Badge key={i} variant="secondary" className="bg-green-500/10">
+                                  project.function.slice(0, 2).map((func, i) => (
+                                    <Badge key={i} variant="secondary" className="bg-green-500/10 text-xs">
                                       {func}
                                     </Badge>
                                   ))}
-                                {project.technology &&
-                                  project.technology.map((tech, i) => (
-                                    <Badge key={i} variant="secondary" className="bg-purple-500/10">
-                                      {tech}
-                                    </Badge>
-                                  ))}
                               </div>
-
-                              <div className="pt-2">
-                                <Button asChild>
+                            </td>
+                            <td className="py-2 px-4 text-right">
+                              <div className="flex items-center justify-end gap-2">
+                                <Button variant="ghost" size="icon" onClick={() => toggleFavorite(project.projectName)}>
+                                  {favorites.includes(project.projectName) ? (
+                                    <BookmarkCheck className="h-4 w-4 text-primary" />
+                                  ) : (
+                                    <Bookmark className="h-4 w-4" />
+                                  )}
+                                </Button>
+                                <Button variant="ghost" size="icon" onClick={() => shareProject(project)}>
+                                  <Share2 className="h-4 w-4" />
+                                </Button>
+                                <Button variant="outline" size="sm" asChild>
                                   <Link
                                     href={`/project/${project.projectName.toLowerCase().replace(/\s+/g, "-")}`}
                                     onClick={() => addToRecentlyViewed(project.projectName)}
                                   >
-                                    View Details
+                                    View
                                   </Link>
                                 </Button>
                               </div>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-
-                  {viewMode === "grid" && (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-                      {projects.map((project, index) => (
-                        <Card key={index} className="overflow-hidden flex flex-col h-full">
-                          <div className="relative h-48 w-full">
-                            <Image
-                              src={project.imageURL || "/placeholder.svg?height=200&width=400"}
-                              alt={project.projectName}
-                              fill
-                              className="object-cover"
-                            />
-                            <div className="absolute top-2 right-2 flex gap-1">
-                              <Button
-                                variant="ghost"
-                                size="icon"
-                                className="h-8 w-8 bg-background/80 backdrop-blur-sm"
-                                onClick={() => toggleFavorite(project.projectName)}
-                              >
-                                {favorites.includes(project.projectName) ? (
-                                  <BookmarkCheck className="h-4 w-4 text-primary" />
-                                ) : (
-                                  <Bookmark className="h-4 w-4" />
-                                )}
-                              </Button>
-                              <Button
-                                variant="ghost"
-                                size="icon"
-                                className="h-8 w-8 bg-background/80 backdrop-blur-sm"
-                                onClick={() => shareProject(project)}
-                              >
-                                <Share2 className="h-4 w-4" />
-                              </Button>
-                            </div>
-                          </div>
-                          <CardHeader className="pb-2">
-                            <CardTitle className="line-clamp-1">{project.projectName}</CardTitle>
-                            <CardDescription className="line-clamp-2">{project.shortDescription}</CardDescription>
-                          </CardHeader>
-                          <CardContent className="pb-2 flex-grow">
-                            <div className="flex flex-wrap gap-1">
-                              {project.industry &&
-                                project.industry.slice(0, 2).map((ind, i) => (
-                                  <Badge key={i} variant="secondary" className="bg-blue-500/10 text-xs">
-                                    {ind}
-                                  </Badge>
-                                ))}
-                              {project.function &&
-                                project.function.slice(0, 1).map((func, i) => (
-                                  <Badge key={i} variant="secondary" className="bg-green-500/10 text-xs">
-                                    {func}
-                                  </Badge>
-                                ))}
-                              {project.technology &&
-                                project.technology.slice(0, 1).map((tech, i) => (
-                                  <Badge key={i} variant="secondary" className="bg-purple-500/10 text-xs">
-                                    {tech}
-                                  </Badge>
-                                ))}
-                            </div>
-                          </CardContent>
-                          <CardFooter>
-                            <Button asChild className="w-full">
-                              <Link
-                                href={`/project/${project.projectName.toLowerCase().replace(/\s+/g, "-")}`}
-                                onClick={() => addToRecentlyViewed(project.projectName)}
-                              >
-                                View Details
-                              </Link>
-                            </Button>
-                          </CardFooter>
-                        </Card>
-                      ))}
-                    </div>
-                  )}
-
-                  {viewMode === "compact" && (
-                    <div className="p-4">
-                      <table className="w-full">
-                        <thead>
-                          <tr className="border-b">
-                            <th className="text-left py-2 px-4 font-medium">Project</th>
-                            <th className="text-left py-2 px-4 font-medium hidden md:table-cell">Industry</th>
-                            <th className="text-left py-2 px-4 font-medium hidden lg:table-cell">Function</th>
-                            <th className="text-right py-2 px-4 font-medium">Actions</th>
+                            </td>
                           </tr>
-                        </thead>
-                        <tbody>
-                          {projects.map((project, index) => (
-                            <tr key={index} className="border-b hover:bg-muted/10">
-                              <td className="py-2 px-4">
-                                <div className="flex items-center gap-3">
-                                  <div className="relative h-10 w-10 rounded overflow-hidden">
-                                    <Image
-                                      src={project.imageURL || "/placeholder.svg?height=40&width=40"}
-                                      alt={project.projectName}
-                                      fill
-                                      className="object-cover"
-                                    />
-                                  </div>
-                                  <div>
-                                    <div className="font-medium">{project.projectName}</div>
-                                    <div className="text-sm text-muted-foreground line-clamp-1">
-                                      {project.shortDescription}
-                                    </div>
-                                  </div>
-                                </div>
-                              </td>
-                              <td className="py-2 px-4 hidden md:table-cell">
-                                <div className="flex flex-wrap gap-1">
-                                  {project.industry &&
-                                    project.industry.slice(0, 2).map((ind, i) => (
-                                      <Badge key={i} variant="secondary" className="bg-blue-500/10 text-xs">
-                                        {ind}
-                                      </Badge>
-                                    ))}
-                                </div>
-                              </td>
-                              <td className="py-2 px-4 hidden lg:table-cell">
-                                <div className="flex flex-wrap gap-1">
-                                  {project.function &&
-                                    project.function.slice(0, 2).map((func, i) => (
-                                      <Badge key={i} variant="secondary" className="bg-green-500/10 text-xs">
-                                        {func}
-                                      </Badge>
-                                    ))}
-                                </div>
-                              </td>
-                              <td className="py-2 px-4 text-right">
-                                <div className="flex items-center justify-end gap-2">
-                                  <Button
-                                    variant="ghost"
-                                    size="icon"
-                                    onClick={() => toggleFavorite(project.projectName)}
-                                  >
-                                    {favorites.includes(project.projectName) ? (
-                                      <BookmarkCheck className="h-4 w-4 text-primary" />
-                                    ) : (
-                                      <Bookmark className="h-4 w-4" />
-                                    )}
-                                  </Button>
-                                  <Button variant="ghost" size="icon" onClick={() => shareProject(project)}>
-                                    <Share2 className="h-4 w-4" />
-                                  </Button>
-                                  <Button variant="outline" size="sm" asChild>
-                                    <Link
-                                      href={`/project/${project.projectName.toLowerCase().replace(/\s+/g, "-")}`}
-                                      onClick={() => addToRecentlyViewed(project.projectName)}
-                                    >
-                                      View
-                                    </Link>
-                                  </Button>
-                                </div>
-                              </td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  )}
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </CollapsibleContent>
               </Collapsible>
             ))

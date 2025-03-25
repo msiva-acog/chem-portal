@@ -2,20 +2,20 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import ProteinViewer from "@/components/protein-viewer"
-import { getAllCategories } from "@/lib/projects"
-import { Database, FlaskRoundIcon as Flask, Lightbulb, Rocket } from "lucide-react"
-import { JSX } from "react"
+// import { getAllCategories } from "@/lib/projects"
+// import { Database, FlaskRoundIcon as Flask, Lightbulb, Rocket } from "lucide-react"
+// import { JSX } from "react"
 
 // Map category IDs to icons
-const categoryIcons: Record<string, JSX.Element> = {
-  internal: <Flask className="h-6 w-6 text-primary" />,
-  abbvie: <Database className="h-6 w-6 text-primary" />,
-  pipeline: <Rocket className="h-6 w-6 text-primary" />,
-  potential: <Lightbulb className="h-6 w-6 text-primary" />,
-}
+// const categoryIcons: Record<string, JSX.Element> = {
+//   internal: <Flask className="h-6 w-6 text-primary" />,
+//   abbvie: <Database className="h-6 w-6 text-primary" />,
+//   pipeline: <Rocket className="h-6 w-6 text-primary" />,
+//   potential: <Lightbulb className="h-6 w-6 text-primary" />,
+// }
 
 export default function Home() {
-  const categories = getAllCategories()
+  // const categories = getAllCategories()
 
   return (
     <div>
@@ -24,13 +24,13 @@ export default function Home() {
         <div className="container mx-auto px-4 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="flex flex-col justify-center space-y-8 max-w-xl mx-auto lg:mx-0">
-              <h1 className="text-5xl font-bold tracking-tight sm:text-6xl text-center lg:text-left">
+              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-center lg:text-left">
               Igniva™ for
               Chemistry: AI/ML &
               GenAI powered
               Computational
               chemistry for
-              Molecular & Material
+              Molecular & Material Discovery
               </h1>
               <p className="text-xl text-muted-foreground text-center lg:text-left">
               Our biology aware chemistry

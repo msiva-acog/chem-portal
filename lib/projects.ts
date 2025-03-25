@@ -182,14 +182,16 @@ export function getAllTechnologies(): string[] {
 }
 
 export function getProjectsByOrganization(
-  organizationType: "category" | "industry" | "function" | "technology",
+  organizationType: "all" | "industry" | "function" | "technology",
 ): Record<string, Project[]> {
   const allProjects = getAllProjects()
   const organizedProjects: Record<string, Project[]> = {}
 
-  if (organizationType === "category") {
+  if (organizationType === "all") {
     const data = getProjectsData()
     Object.entries(data.categories).forEach(([categoryId, category]) => {
+      console.log(categoryId);
+      
       organizedProjects[category.name] = []
 
       Object.values(category.subcategories).forEach((subcategory) => {

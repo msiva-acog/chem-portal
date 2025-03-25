@@ -8,22 +8,22 @@ categories:
         description: "Core capabilities and expertise in computational chemistry"
         projects:
           - projectName: "Advanced Material Analysis"
-            imageURL: "/images/projects/material.png"
+            imageURL: "/images/projects/material-analysis.jpg"
             shortDescription: "Cutting-edge techniques for analyzing complex chemical structures"
             longDescription: "Our Advanced Material Analysis project utilizes state-of-the-art spectroscopic methods to characterize novel materials at the molecular level. This capability enables us to identify structural properties, composition, and potential applications for new compounds developed in our labs."
             industry: ["Materials", "Manufacturing"]
             function: ["Analysis", "Characterization"]
             technology: ["Spectroscopy", "Machine Learning"]
             links:
-              - title: "Technical Documentation"
+              - title: "User Guide"
                 url: "/docs/material-analysis"
-              - title: "Demo Dashboard"
+              - title: "Try the App"
                 url: "https://demo.example.com/material-analysis"
-              - title: "Research Paper"
+              - title: "Know More"
                 url: "https://example.com/papers/advanced-material-analysis"
           
           - projectName: "Molecular Modeling Suite"
-            imageURL: "/images/projects/modeling.png"
+            imageURL: "/images/projects/molecular-modeling.jpg"
             shortDescription: "Computational tools for predicting molecular behavior"
             longDescription: "The Molecular Modeling Suite is a comprehensive set of computational tools developed in-house that allows our scientists to predict how molecules will interact, react, and behave under various conditions. This capability significantly reduces experimental time and costs by allowing us to simulate reactions before conducting physical experiments."
             industry: ["Pharmaceutical", "Biotechnology"]
@@ -32,9 +32,9 @@ categories:
             links:
               - title: "User Guide"
                 url: "/docs/molecular-modeling"
-              - title: "Web Application"
+              - title: "Try the App"
                 url: "https://modeling.example.com"
-              - title: "Tutorial Video"
+              - title: "Know More"
                 url: "https://example.com/videos/modeling-tutorial"
       
       products:
@@ -42,33 +42,33 @@ categories:
         description: "Products developed by our computational chemistry team"
         projects:
           - projectName: "Catalyst Optimization Framework"
-            imageURL: "/images/projects/catalyst.png"
+            imageURL: "/images/projects/catalyst-optimization.jpg"
             shortDescription: "Systematic approach to developing more efficient catalysts"
             longDescription: "Our Catalyst Optimization Framework provides a methodical approach to designing, testing, and refining chemical catalysts. By combining computational modeling with high-throughput experimental validation, we've created a system that can rapidly identify promising catalyst candidates for specific industrial processes."
             industry: ["Chemical", "Energy", "Manufacturing"]
             function: ["Optimization", "Design"]
             technology: ["Machine Learning", "High-throughput Screening"]
             links:
-              - title: "Process Documentation"
+              - title: "User Guide"
                 url: "/docs/catalyst-framework"
-              - title: "Results Dashboard"
+              - title: "Try the App"
                 url: "https://catalysts.example.com"
-              - title: "Case Studies"
+              - title: "Know More"
                 url: "/case-studies/catalyst-optimization"
           
           - projectName: "Green Synthesis Platform"
-            imageURL: "/images/projects/green.png"
+            imageURL: "/images/projects/green-synthesis.jpg"
             shortDescription: "Environmentally friendly chemical synthesis methods"
             longDescription: "The Green Synthesis Platform represents our commitment to sustainable chemistry. This project has developed a suite of reaction pathways and methodologies that minimize waste, reduce energy consumption, and eliminate hazardous substances from chemical manufacturing processes while maintaining or improving yield and purity."
             industry: ["Chemical", "Pharmaceutical", "Agriculture"]
             function: ["Synthesis", "Sustainability"]
             technology: ["Green Chemistry", "Process Optimization"]
             links:
-              - title: "Methodology Guide"
+              - title: "User Guide"
                 url: "/docs/green-synthesis"
-              - title: "Sustainability Metrics"
+              - title: "Try the App"
                 url: "https://green.example.com/metrics"
-              - title: "Implementation Examples"
+              - title: "Know More"
                 url: "/examples/green-synthesis"
       
       presales:
@@ -85,17 +85,19 @@ categories:
         description: "Induced Fit Docking and Molecular Dynamics simulations"
         projects:
           - projectName: "Protein-Ligand Binding Analysis"
-            imageURL: "/images/projects/ifd.png"
+            imageURL: "/images/projects/protein-ligand.jpg"
             shortDescription: "Advanced analysis of protein-ligand interactions"
             longDescription: "This project focuses on the detailed analysis of protein-ligand binding interactions using induced fit docking and molecular dynamics simulations. By accurately modeling the flexibility of both the protein and ligand during binding, we can predict binding affinities and identify key interaction points for drug optimization."
             industry: ["Pharmaceutical", "Biotechnology"]
             function: ["Analysis", "Prediction"]
             technology: ["Molecular Dynamics", "Docking"]
             links:
-              - title: "Technical Report"
+              - title: "User Guide"
                 url: "/reports/protein-ligand"
-              - title: "Simulation Data"
+              - title: "Try the App"
                 url: "/data/protein-ligand"
+              - title: "Know More"
+                url: "/reports/protein-ligand"
       
       pka:
         name: "PKa"
@@ -109,10 +111,12 @@ categories:
             function: ["Prediction", "Property Calculation"]
             technology: ["Quantum Mechanics", "Machine Learning"]
             links:
-              - title: "Tool Documentation"
+              - title: "User Guide"
                 url: "/docs/pka-tool"
-              - title: "Validation Study"
+              - title: "Try the App"
                 url: "/studies/pka-validation"
+              - title: "Know More"
+                url: "/docs/pka-tool"
       
       amination-modeling:
         name: "Amination Modeling"
@@ -126,10 +130,12 @@ categories:
             function: ["Reaction Modeling", "Mechanism Study"]
             technology: ["Quantum Mechanics", "Transition State Theory"]
             links:
-              - title: "Reaction Database"
+              - title: "User Guide"
                 url: "/database/amination"
-              - title: "Catalyst Screening Tool"
+              - title: "Try the App"
                 url: "/tools/catalyst-screening"
+              - title: "Know More"
+                url: "/database/amination"
       
       bio-catalysis:
         name: "Bio Catalysis"
@@ -143,10 +149,12 @@ categories:
             function: ["Design", "Engineering"]
             technology: ["Protein Modeling", "Machine Learning"]
             links:
-              - title: "Platform Overview"
+              - title: "User Guide"
                 url: "/overview/enzyme-platform"
-              - title: "Case Studies"
+              - title: "Try the App"
                 url: "/cases/enzyme-engineering"
+              - title: "Know More"
+                url: "/overview/enzyme-platform"
 
   customer2:
     name: "Customer 2"
@@ -164,10 +172,12 @@ categories:
             function: ["Prediction", "Property Calculation"]
             technology: ["Machine Learning", "Statistical Modeling"]
             links:
-              - title: "Method Description"
+              - title: "User Guide"
                 url: "/methods/solubility-prediction"
-              - title: "Validation Results"
+              - title: "Try the App"
                 url: "/results/solubility-validation"
+              - title: "Know More"
+                url: "/methods/solubility-prediction"
       
       customer3-projects:
         name: "Customer 3 Projects"
@@ -181,10 +191,12 @@ categories:
             function: ["Optimization", "Formulation"]
             technology: ["Molecular Modeling", "Machine Learning"]
             links:
-              - title: "Optimization Framework"
+              - title: "User Guide"
                 url: "/framework/adhesive-optimization"
-              - title: "Performance Metrics"
+              - title: "Try the App"
                 url: "/metrics/adhesive-performance"
+              - title: "Know More"
+                url: "/framework/adhesive-optimization"
 
   potential:
     name: "Potential"
@@ -202,10 +214,12 @@ categories:
             function: ["Data Management", "Analysis"]
             technology: ["Big Data", "AI/ML"]
             links:
-              - title: "Platform Architecture"
+              - title: "User Guide"
                 url: "/architecture/data-integration"
-              - title: "Use Cases"
+              - title: "Try the App"
                 url: "/cases/data-integration"
+              - title: "Know More"
+                url: "/architecture/data-integration"
       
       demos:
         name: "Demos"
@@ -219,8 +233,10 @@ categories:
             function: ["Visualization", "Education"]
             technology: ["WebGL", "3D Rendering"]
             links:
-              - title: "Live Demo"
+              - title: "User Guide"
                 url: "/demo/molecular-visualization"
-              - title: "Technical Details"
+              - title: "Try the App"
                 url: "/details/visualization-technology"
+              - title: "Know More"
+                url: "/demo/molecular-visualization"
 

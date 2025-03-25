@@ -7,10 +7,14 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ArrowLeft, ExternalLink } from "lucide-react"
 
-interface ProjectPageProps {
-  params: {
-    slug: string
-  }
+interface param {
+  slug:string
+}
+interface ProjectPageProps{
+  params?: Promise<param>
+  // params: {
+  //   slug: string
+  // }
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {

@@ -1,34 +1,32 @@
-"use client"
+
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-import { FlaskRoundIcon as Flask } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useEffect, useState } from "react"
 import { ModeToggle } from "./mode-toggle"
 import Image from "next/image"
 
 // We need to use client-side fetching for the header since it's a client component
-interface Category {
-  name: string
-}
+// interface Category {
+//   name: string
+// }
 
-interface Categories {
-  [key: string]: Category
-}
+// interface Categories {
+//   [key: string]: Category
+// }
 
 export default function Header() {
   const pathname = usePathname()
-  const [categories, setCategories] = useState<Categories>({})
+  // const [categories, setCategories] = useState<Categories>({})
 
-  useEffect(() => {
-    // Fetch categories on the client side
-    fetch("/api/categories")
-      .then((res) => res.json())
-      .then((data) => setCategories(data))
-      .catch((err) => console.error("Error fetching categories:", err))
-  }, [])
+  // useEffect(() => {
+  //   // Fetch categories on the client side
+  //   fetch("/api/categories")
+  //     .then((res) => res.json())
+  //     .then((data) => setCategories(data))
+  //     .catch((err) => console.error("Error fetching categories:", err))
+  // }, [])
 
   // Base navigation items
   const baseNavItems = [
@@ -36,11 +34,11 @@ export default function Header() {
     { name: "Modules", href: "/modules" },
   ]
 
-  // Add category items
-  const categoryNavItems = Object.entries(categories).map(([id, category]) => ({
-    name: category.name,
-    href: `/categories#${id}`,
-  }))
+  // // Add category items
+  // const categoryNavItems = Object.entries(categories).map(([id, category]) => ({
+  //   name: category.name,
+  //   href: `/categories#${id}`,
+  // }))
 
   const navItems = [...baseNavItems]
 

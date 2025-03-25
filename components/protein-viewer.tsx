@@ -2,11 +2,11 @@
 
 import { useEffect, useRef } from "react"
 import * as NGL from "ngl";
-import { Loader2 } from "lucide-react"
 
 export default function ProteinViewer() {
   const containerRef = useRef<HTMLDivElement>(null)
   const loadedRef = useRef(false)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const stageRef = useRef<any>(null)
 
   useEffect(() => {
@@ -21,12 +21,15 @@ export default function ProteinViewer() {
       try {
         // Dynamically import NGL
         // const NGL = await import("ngl")
+        // figured it out that we dont have to import it dynamically it might cuse further issues in production build
+
 
         // Create NGL Stage object
-        const stage = new NGL.Stage(containerRef.current, {
+        // for now setting this type as any 
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const stage:any = new NGL.Stage(containerRef.current, {
           backgroundColor: "transparent",
           quality: "medium",
-          antialias: true,
         })
         stageRef.current = stage
 
@@ -38,7 +41,9 @@ export default function ProteinViewer() {
 
         // Load a simple sample structure (Lysozyme - a small, well-known protein)
         // This is a reliable PDB that should load quickly
-        const structure = await stage.loadFile("rcsb://4LZT")
+        // for now setting this type as any
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const structure:any = await stage.loadFile("rcsb://4LZT")
 
         // Add representations
         structure.addRepresentation("cartoon", {
