@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import ProteinViewer from "@/components/protein-viewer"
+import {VideoPlayer} from "@/components/video-player"
 // import { getAllCategories } from "@/lib/projects"
 // import { Database, FlaskRoundIcon as Flask, Lightbulb, Rocket } from "lucide-react"
 // import { JSX } from "react"
@@ -82,6 +83,19 @@ export default function Home() {
           </div>
         </div>
       </section> */}
+
+
+
+<div className="max-w-3xl mx-auto p-4">
+      <VideoPlayer 
+        url="/videos/Accelerate AI-Powered Drug Discovery With NVIDIA BioNeMo.mp4"
+        title="Demo Video"
+        autoPlay={false}
+        showControls={true}
+         className="rounded-lg shadow-lg"
+      />
+    </div>
+
     </div>
   )
 }
