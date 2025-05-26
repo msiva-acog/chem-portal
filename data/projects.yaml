@@ -1,7 +1,7 @@
 modules:
   MolConSUL:
     imageURL: "/images/projects/molconsule.png"
-    videoURL: "/videos/molconsul.mp4"
+    videoURL: "https://igniva-file-server.own6.aganitha.ai:8643/molconsul.mp4"
     status: "completed"
     moduleName: "MolConSUL"
     shortDescription: "Accelerated conformer generation for diverse drug-like molecules using unsupervised learning."
@@ -23,7 +23,7 @@ modules:
   
   ADMETInsight:
     imageURL: "/images/projects/ifd.png"
-    videoURL: "/videos/Property Prediction Screen Recording -2.mp4"
+    videoURL: "https://igniva-file-server.own6.aganitha.ai:8643/Property%20Prediction%20Screen%20Recording%20-2.mp4"
     status: "completed"
     moduleName: "ADMETInsight"
     shortDescription: "AI-based ADMET prediction and molecular optimization with interpretable recommendations"
@@ -62,7 +62,7 @@ modules:
   
   PocketPredict:
     imageURL: "/images/projects/pocket.png"
-    videoURL: "/videos/Pocket Prediction Movie-1.mp4"
+    videoURL: "https://igniva-file-server.own6.aganitha.ai:8643/Pocket%20Prediction%20Movie-1.mp4"
     status: "completed"
     moduleName: "PocketPredict"
     shortDescription: "AI-Driven Druggability Analysis for Challenging Targets"
@@ -101,7 +101,7 @@ modules:
   
   AutoMDX:
     imageURL: "/images/projects/ifd.png"
-    videoURL: "/videos/MD-Demo-Screen-Recording-3.mp4"
+    videoURL: "https://igniva-file-server.own6.aganitha.ai:8643/MD-Demo-Screen-Recording-3.mp4"
     status: "work-in-progress"
     moduleName: "AutoMDX"
     shortDescription: " Advancing Molecular Dynamics Simulations and Trajectory Analysis."
@@ -140,7 +140,7 @@ modules:
   
   ReactMod:
     imageURL: "/images/projects/ifd.png"
-    videoURL: "/videos/ReactMod.mp4"
+    videoURL: "https://igniva-file-server.own6.aganitha.ai:8643/ReactMod.mp4"
     status: "completed"
     moduleName: "ReactMod"
     shortDescription: "AI-based recommendations for optimal reaction conditions."

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ArrowLeft, BookOpen, Building2, Cog, Cpu, ExternalLink, Tag } from "lucide-react"
-// import { VideoPlayer } from "@/components/video-player"
+import { VideoPlayer } from "@/components/video-player"
 
 interface param {
   slug:string
@@ -48,9 +48,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <div className="lg:col-span-2">
           <Card className="overflow-hidden h-full">
             <div className="relative h-full">
-              {/* {project.videoURL ? (
+              {project.videoURL ? (
                 <VideoPlayer url={project.videoURL}  title={project.moduleName} />
-              ) : ( */}
+              ) : (
                 <div className="relative aspect-video w-full">
                   <Image
                     src={project.imageURL || "/placeholder.svg?height=400&width=600"}
@@ -60,7 +60,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     priority
                   />
                 </div>
-              {/* )} */}
+              )}
             </div>
           </Card>
         </div>
