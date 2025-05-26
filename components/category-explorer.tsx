@@ -73,7 +73,7 @@ export default function CategoryExplorer({
 
   
     if (organizationType === "status") {
-      result["Completed"] = initialProjects.filter((project) => project.status === "completed")
+      result["Ready to Use"] = initialProjects.filter((project) => project.status === "completed")
       result["Work in Progress"] = initialProjects.filter((project) => project.status === "work-in-progress")
     } else {
       initialProjects.forEach((project) => {
@@ -109,12 +109,18 @@ export default function CategoryExplorer({
 
     Object.entries(organizedProjects).forEach(([group, projects]) => {
       const filteredProjects = projects.filter((project) => {
-        // Filter by search query
-        return (
-          project.moduleName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          project.shortDescription.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          project.longDescription.toLowerCase().includes(searchQuery.toLowerCase())
-        )
+        console.log(project);
+        const searchLower = searchQuery.toLowerCase()
+        
+        const matchesText =
+          project.moduleName.toLowerCase().includes(searchLower) ||
+          project.longDescription.toLowerCase().includes(searchLower)
+
+        // Check in keywords
+        const matchesKeywords =
+          project.keywords?.some((keyword) => keyword.toLowerCase().includes(searchLower)) || false
+
+        return matchesText || matchesKeywords
       })
 
       if (filteredProjects.length > 0) {
@@ -439,7 +445,7 @@ export default function CategoryExplorer({
                               >
                                 {project.status === "completed" ? (
                                   <span className="flex items-center gap-1 text-primary">
-                                    <CheckCircle className="h-3 w-3 text-green-500" /> Completed
+                                    <CheckCircle className="h-3 w-3 text-green-500" /> Ready to Use
                                   </span>
                                 ) : (
                                   <span className="flex items-center gap-1">

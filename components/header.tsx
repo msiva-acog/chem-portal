@@ -3,7 +3,6 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
 import { ModeToggle } from "./mode-toggle"
 import Image from "next/image"
 
@@ -71,10 +70,10 @@ export default function Header() {
         </nav>
         <div className="ml-auto flex items-center space-x-4">
           <ModeToggle/>
-          <Button variant="outline" size="sm">
+          {/* <Button variant="outline" size="sm">
             LOGIN
           </Button>
-          <Button size="sm">CONTACT US</Button>
+          <Button size="sm">CONTACT US</Button> */}
         </div>
       </div>
     </header>

@@ -34,14 +34,7 @@ export default function Home() {
               Molecular & Material Discovery
               </h1>
               <p className="text-xl text-muted-foreground text-center lg:text-left">
-              Our biology aware chemistry
-              Deep Science platform, rooted in
-              first principles based methods
-              viz. Molecular Dynamics (MD),
-              Quantum Mechanics (QM)
-              embracing advances in Deep
-              Tech. viz. AI/ML, GenAI, GPU
-              acceleration for high throughput
+              A comprehensive AI-powered suite designed to accelerate <strong>Structural Biology, Molecular & Material Engineering,</strong> and <strong>Chemistry, Manufacturing & Controls (CMC)</strong>. By integrating Generative AI & Large Language Models (LLMs) with Physics-first methodologies—such as Quantum Mechanics (QM) and Molecular Dynamics (MD)—Igniva™ Igniva™ delivers tailored solutions across industries.
               </p>
               <div className="pt-6 flex justify-center lg:justify-start">
                 <Button
@@ -83,19 +76,6 @@ export default function Home() {
           </div>
         </div>
       </section> */}
-
-
-
-<div className="max-w-3xl mx-auto p-4">
-      <VideoPlayer 
-        url="/videos/Accelerate AI-Powered Drug Discovery With NVIDIA BioNeMo.mp4"
-        title="Demo Video"
-        autoPlay={false}
-        showControls={true}
-         className="rounded-lg shadow-lg"
-      />
-    </div>
-
     </div>
   )
 }

@@ -8,8 +8,10 @@ export interface ProjectLink {
 }
 
 export interface Project {
+  keywords? : string[]
   moduleName: string
   imageURL: string
+  videoURL?: string
   status: string
   shortDescription: string
   longDescription: string
