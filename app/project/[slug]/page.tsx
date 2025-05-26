@@ -5,8 +5,8 @@ import { notFound } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, BookOpen, Building2, Cog, Cpu, ExternalLink} from "lucide-react"
-import { VideoPlayer } from "@/components/video-player"
+import { ArrowLeft, BookOpen, Building2, Cog, Cpu, ExternalLink, Tag } from "lucide-react"
+// import { VideoPlayer } from "@/components/video-player"
 
 interface param {
   slug:string
@@ -48,9 +48,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <div className="lg:col-span-2">
           <Card className="overflow-hidden h-full">
             <div className="relative h-full">
-              {project.videoURL ? (
+              {/* {project.videoURL ? (
                 <VideoPlayer url={project.videoURL}  title={project.moduleName} />
-              ) : (
+              ) : ( */}
                 <div className="relative aspect-video w-full">
                   <Image
                     src={project.imageURL || "/placeholder.svg?height=400&width=600"}
@@ -60,7 +60,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     priority
                   />
                 </div>
-              )}
+              {/* )} */}
             </div>
           </Card>
         </div>
@@ -106,12 +106,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 )}
                 {project.keywords && (
                   <div className="flex items-start gap-3">
-                    <Cog className="h-6 w-6 text-muted-foreground mt-0.5" />
+                    <Tag className="h-4 w-4 text-muted-foreground relative top-[1px] flex-shrink-0" />
                     <div>
-                      <h3 className="text-sm font-medium mb-1">Keywords</h3>
+                      <h3 className="text-sm font-medium mb-1"> Keywords</h3>
                       <div className="flex flex-wrap gap-2">
                         {project.keywords.map((func, i) => (
-                          <Badge key={i} variant="secondary" className="bg-green-500/10">
+                          <Badge key={i} variant="secondary" className="bg-blue-500/10">
                             {func}
                           </Badge>
                         ))}

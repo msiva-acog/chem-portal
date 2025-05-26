@@ -26,15 +26,10 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="flex flex-col justify-center space-y-8 max-w-xl mx-auto lg:mx-0">
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl text-center lg:text-left">
-              Igniva™ for
-              Chemistry: AI/ML &
-              GenAI powered
-              Computational
-              chemistry for
-              Molecular & Material Discovery
+              Igniva™ for Chemistry: Accelerating Molecular and Materials Discovery through AI-Powered Computational Chemistry
               </h1>
               <p className="text-xl text-muted-foreground text-center lg:text-left">
-              A comprehensive AI-powered suite designed to accelerate <strong>Structural Biology, Molecular & Material Engineering,</strong> and <strong>Chemistry, Manufacturing & Controls (CMC)</strong>. By integrating Generative AI & Large Language Models (LLMs) with Physics-first methodologies—such as Quantum Mechanics (QM) and Molecular Dynamics (MD)—Igniva™ Igniva™ delivers tailored solutions across industries.
+              A comprehensive AI-powered suite designed to accelerate <strong> Structural Biology, Molecular and Materials Engineering, and Chemistry, Manufacturing, and Controls (CMC)</strong>. By integrating advanced AI/ML techniques—including deep learning, Generative AI, and Large Language Models (LLMs)—with physics-first methodologies such as Quantum Mechanics (QM) and Molecular Dynamics (MD), Igniva™ delivers tailored solutions across industries.
               </p>
               <div className="pt-6 flex justify-center lg:justify-start">
                 <Button

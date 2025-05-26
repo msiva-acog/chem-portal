@@ -30,7 +30,7 @@ modules:
     longDescription: "Aganitha’s ADMETInsight is an AI-driven platform designed to predict and optimize ADMET (Absorption, Distribution, Metabolism, Excretion, and Toxicity) properties with interpretability of predictions. Utilizing state-of-the-art AI/ML techniques, ADMETInsight accurately predicts over 50 ADMET properties and offers targeted optimization recommendations for structural modifications that result in desired properties and exploring the neighboring chemical space. This empowers researchers to fine-tune molecules by combining their expertise with the power of AI. By accelerating hit-to-lead optimization, this innovative tool streamlines the development of drug candidates with optimal pharmacokinetic (PK), pharmacodynamic (PD), and safety profiles."
     keywords: ["Conformer Generation","Simulation","Druggability analysis","Target elucidation","Binding pocket detection","Pocket characterization","Allosteric pocket"]
     industry: ["Pharmaceutical", "Biotechnology"]
-    function: ["Prediction", "Optimization"]
+    function: ["Molecular Design & Optimization"]
     technology: ["Molecular Dynamics", "Quantum Mechanics"]
     usecase: ["ADMET Modeling", "Hit-to-Lead Optimization", "AI in Drug Design"]
     links:
@@ -49,7 +49,7 @@ modules:
     longDescription: "Aganitha's ScreenXcel is a GPU-accelerated platform designed for rapid and precise virtual screening of extensive ligand libraries against specific protein targets. With the capacity to screen 1 million molecules per day, it achieves nearly 1.8 times higher accuracy than traditional physics-based rigid docking pipelines. Supporting both covalent and non-covalent ligands, ScreenXcel broadens the scope of drug discovery. Its flexible docking capabilities account for protein side-chain movements, ensuring improved docking pose predictions. Additionally, users can screen pre-curated molecular libraries, such as FDA-approved drugs, anti-malarial compounds, ENAMINE REAL molecules, ATP competitors, and more. By integrating advanced cheminformatics with optimized physics-based docking algorithms, ScreenXcel consistently delivers accurate and chemically meaningful ligand poses within protein binding pockets."
     keywords: ["Conformer Generation","Simulation","Druggability analysis","Target elucidation","Binding pocket detection","Pocket characterization","Allosteric pocket"]
     industry: ["Pharmaceutical", "Biotechnology"]
-    function: ["Virtual Screening", "Simulation"]
+    function: ["Molecular Design & Optimization"]
     technology: ["Machine Learning", "High-throughput Screening"]
     usecase : [" High-throughput Screening", "Covalent/Non-Covalent Docking"]
     links:
@@ -64,7 +64,8 @@ modules:
     imageURL: "/images/projects/pocket.png"
     videoURL: "/videos/Pocket Prediction Movie-1.mp4"
     status: "completed"
-    moduleName: "PocketAI-Driven Druggability Analysis for Challenging Target."
+    moduleName: "PocketPredict"
+    shortDescription: "AI-Driven Druggability Analysis for Challenging Targets"
     longDescription: "Aganitha’s PocketPredict is a cutting-edge druggability analysis platform that harnesses AI/ML to quickly and accurately identify druggable pockets in target proteins. By integrating a suite of state-of-the-art AI/ML algorithms, PocketPredict achieves an impressive 93.5% success rate across 1,600 annotated drug-binding pockets from diverse proteins curated from the RCSB PDB. In addition to detecting surface-accessible sites, PocketPredict excels at identifying cryptic pockets—hidden binding sites within native protein structures. This capability makes it an invaluable tool for addressing hard-to-drug proteins. By uncovering both conventional and elusive pockets, PocketPredict broadens the scope of structure-based drug design."
     keywords: ["Conformer Generation","Simulation","Druggability analysis","Target elucidation","Binding pocket detection","Pocket characterization","Allosteric pocket"]
     industry: ["Pharmaceutical", "Biotechnology"]
@@ -83,7 +84,7 @@ modules:
     imageURL: "/images/projects/ifd.png"
     status: "completed"
     moduleName: "CrystalLatticeAI"
-    shortDescription: "Predicts stable crystal structures and lattice energies from SMILES using deep learning."
+    shortDescription: "Deep Learning-Driven Crystal Structure and Stability Prediction"
     longDescription: "Aganitha’s CrystalLatticeAI is a state-of-the-art in silico platform for crystal structure prediction, designed to leverage lattice energy prediction models trained on high-quality quantum mechanical data. At its core is Aganitha’s meticulously curated synthetic database of over 13,000 lattice energies, calculated at the Density Functional Theory (DFT) level of theory. This deep learning-based tool predicts stable crystal structures directly from a molecule's SMILES notation, enabling rapid and accurate polymorph screening. The lattice energy prediction model delivers exceptional performance, achieving a Spearman’s R of 0.99 when validated on more than 1,000 diverse organic molecular crystals. By accelerating the early stages of drug development, CrystalLatticeAI enables researchers to efficiently navigate crystal landscapes, facilitating the identification of optimal solid forms for pharmaceutical advancement with remarkable precision and speed."
     keywords: ["Solid State Chemistry", "Polymorph screening", "Crystal Structure Prediction (CSP)", "Lattice Energy prediction", "Organic molecular crystals"]
     industry: ["Pharmaceutical", "Chemical", "Materials Science"]
@@ -103,7 +104,7 @@ modules:
     videoURL: "/videos/MD-Demo-Screen-Recording-3.mp4"
     status: "work-in-progress"
     moduleName: "AutoMDX"
-    shortDescription: " Automated MD simulation setup and trajectory analysis for proteins and complexes."
+    shortDescription: " Advancing Molecular Dynamics Simulations and Trajectory Analysis."
     longDescription: "Aganitha’s AutoMDX (Automated Molecular Dynamics eXplorer) is a comprehensive platform designed to automate the execution and analysis of Molecular Dynamics (MD) simulations for diverse molecular systems. It can handle proteins with and without ligands and/or cofactors in water or embedded in lipid membranes, with support for both atomistic and coarse-grained MD simulations. Powered by GPU infrastructure, AutoMDX enables efficient simulations and provides advanced tools for trajectory analysis, delivering valuable insights for target modeling and drug discovery, including the prioritization of hit candidates from library screening. Additionally, users can upload their own trajectories to leverage the platform’s robust analysis capabilities, ensuring a versatile and user-focused solution for molecular research."
     keywords: ["Molecular Dynamics", "Ligand-protein interaction", "Membrane embeded proteins", "Atomistic simulations", "Coarsed grain simulations", "Trajectory analysis"]
     industry: ["Pharmaceutical", "Biotechnology", "Materials"]
@@ -122,7 +123,7 @@ modules:
     imageURL: "/images/projects/ifd.png"
     status: "work-in-progress"
     moduleName: "MolGenAI"
-    shortDescription: "Computational modeling of catalytic amination reactions"
+    shortDescription: "Advanced Generative AI Platform for Optimized De Novo Drug Design"
     longDescription: "Aganitha’s MolGenAI leverages state-of-the-art generative AI technology to design novel drug molecules tailored to the structure of a target protein pocket. The platform leverages reinforcement learning framework to enable multi-parameter optimization during molecule generation thus factoring in for strong binding affinity to the target, drug-likeness, synthesizability, and novelty. Beyond generation, MolGenAI enforces a sophisticated filtration pipeline to eliminate promiscuous or toxic molecules and validate ADMET properties. This comprehensive framework offers researchers an efficient, high-precision tool to explore chemical space and build targeted molecular libraries for screening and accelerating the discovery of high-quality therapeutic candidates."
     keywords: ["De novo molecule generation", "Generative AI", "Multiparameter optimization", "Molecule optimization", "Pocket based molecule generation", "Structure based drug design", "Grid Inhomogeneous Solvation Theory (GIST)"]
     industry: ["Pharmaceutical", "Biotechnology", "Materials"]
@@ -142,7 +143,7 @@ modules:
     videoURL: "/videos/ReactMod.mp4"
     status: "completed"
     moduleName: "ReactMod"
-    shortDescription: "Predicts optimal conditions and yield for key organic reactions using AI."
+    shortDescription: "AI-based recommendations for optimal reaction conditions."
     longDescription: "Aganitha’s AI-based platform to predict yield for most frequently carried out reactions (e.g., Suzuki reactions, Buchwald-Hartwig amination reactions) and identify the optimal conditions for a given reactant pair in the very first well-plate experiment carried out in the lab. State-of-the art methods such as RDF functions are used to featurize the chemical transformation around the reaction centre along with descriptors that capture the steric and electronic environment of the ligands. These domain-informed descriptors help in explainability and generalization of the models on a proprietary dataset"
     keywords: ["Reaction modelling", "Yield prediction", "AI/ML"]
     industry: ["Pharmaceutical","Chemical"]
@@ -162,7 +163,7 @@ modules:
     status: "completed"
     moduleName: "MolScreener"
     shortDescription: "Filtering high-quality, medchem-ready drug candidates from AI-generated or virtually screened molecules."
-    longDescription: "Aganitha’s AI-based platform to predict yield for most frequently carried out reactions (e.g., Suzuki reactions, Buchwald-Hartwig amination reactions) and identify the optimal conditions for a given reactant pair in the very first well-plate experiment carried out in the lab. State-of-the art methods such as RDF functions are used to featurize the chemical transformation around the reaction centre along with descriptors that capture the steric and electronic environment of the ligands. These domain-informed descriptors help in explainability and generalization of the models on a proprietary dataset"
+    longDescription: "MolScreener is a smart, descriptor-driven filtering tool designed to triage molecules emerging from generative AI-based de novo design and ultra-large virtual screening campaigns. It calculates a diverse set of molecular descriptors using advanced cheminformatics protocols—going well beyond standard RDKit properties—to enable accurate downstream property prediction using AI/ML models. These descriptors capture physicochemical, topological, and reactivity-relevant information, enhancing the modeling of key developability traits. Leveraging these computed features, MolScreener then applies medchem-informed filtering to assess whether a molecule is suitable as a small molecule (SMOL) drug, a PROTAC, or their fragments. This includes screening for problematic functional groups that could lead to assay interference (PAINS), toxicity, chemical instability, synthetic intractability, or promiscuous binding behavior. The result is a refined pool of candidates with higher medicinal chemistry quality and a better chance of success in experimental or iterative design workflows."
     keywords: ["Molecular descriptors", "1D 2D descriptors", "RDKit", "PaDEL", "Mordred", "QM based descriptors", "Filtration for SMOL", "Filtration for fragments", "Filtration for PROTACs"]
     industry: ["Pharmaceutical","Chemical"]
     function: ["Molecular Design & Optimization"]
@@ -179,7 +180,7 @@ modules:
   MolMatch:
     imageURL: "/images/projects/ifd.png"
     status: "work-in-progress"
-    moduleName: "MoMolMatch:"
+    moduleName: "MolMatch:"
     shortDescription: "Searching structurally similar molecules in ultra-large molecular libraries"
     longDescription: "Aganitha’s AI-based platform to predict yield for most frequently carried out reactions (e.g., Suzuki reactions, Buchwald-Hartwig amination reactions) and identify the optimal conditions for a given reactant pair in the very first well-plate experiment carried out in the lab. State-of-the art methods such as RDF functions are used to featurize the chemical transformation around the reaction centre along with descriptors that capture the steric and electronic environment of the ligands. These domain-informed descriptors help in explainability and generalization of the models on a proprietary dataset"
     keywords: ["VectorDB search", "ENAMINE REAL database", "Structural similarity"]
@@ -199,7 +200,7 @@ modules:
     imageURL: "/images/projects/ifd.png"
     status: "completed"
     moduleName: "APISurrogateFinder:"
-    shortDescription: "A platform for finding API-Surrogates and their formulation related informationA platform for finding API-Surrogates and their formulation related information"
+    shortDescription: " A platform for finding API-Surrogates and their formulation related information"
     longDescription: "Aganitha’s AI-based platform to predict yield for most frequently carried out reactions (e.g., Suzuki reactions, Buchwald-Hartwig amination reactions) and identify the optimal conditions for a given reactant pair in the very first well-plate experiment carried out in the lab. State-of-the art methods such as RDF functions are used to featurize the chemical transformation around the reaction centre along with descriptors that capture the steric and electronic environment of the ligands. These domain-informed descriptors help in explainability and generalization of the models on a proprietary dataset"
     keywords: ["FDA approved drugs", "Dailymed", "Physicochemical properties", "Active Phermaceutical Ingredients (API)", "API Surrogate", "PubChem", "Database"]
     industry: ["Pharmaceutical","Chemical"]
@@ -219,7 +220,7 @@ modules:
     status: "completed"
     moduleName: "AutoDFT"
     shortDescription: "A platform for performing automated GPU accelerated DFT calculations"
-    longDescription: "Aganitha’s AI-based platform to predict yield for most frequently carried out reactions (e.g., Suzuki reactions, Buchwald-Hartwig amination reactions) and identify the optimal conditions for a given reactant pair in the very first well-plate experiment carried out in the lab. State-of-the art methods such as RDF functions are used to featurize the chemical transformation around the reaction centre along with descriptors that capture the steric and electronic environment of the ligands. These domain-informed descriptors help in explainability and generalization of the models on a proprietary dataset"
+    longDescription: "AutoDFT is a high-performance web platform that accelerates Density Functional Theory (DFT) calculations using advanced GPU technology, enabling faster and more efficient quantum simulations. Supporting a range of essential workflows—including single-point energy, geometry optimization, and excited-state electronic structure calculations—AutoDFT combines automation, GPU-based acceleration, and an intuitive user interface to streamline complex computational tasks and deliver rapid, reliable insights."
     keywords: ["Density Functional Theory", "Geometry optimization", "Electronic Structure Theory", "Basis set", "Functional", "Excitation energy", "Ground state electronic properties", "Excited state electronic properties"]
     industry: ["Pharmaceutical","Chemical"]
     function: ["Molecular Design & Optimization"]
