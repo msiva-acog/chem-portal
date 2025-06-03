@@ -252,6 +252,26 @@ modules:
       #   url: "https://prediction-modelling-demo.own4.aganitha.ai:8443/"
       - title: "Know More"
         url: "/overview/enzyme-platform"
+
+  pKaPredictor:
+    imageURL: "/images/projects/pka.png"
+    status: "completed"
+    moduleName: "pKaPredictor"
+    shortDescription: "Accurate pKa Prediction Across Solvent Systems"
+    longDescription: >
+      Aganitha’s pKaPredictor is a high-throughput DFT-based module for accurate estimation of pKa values of organic molecules in both aqueous and non-aqueous solvents. Featuring an interactive, automated workflow and a thoroughly benchmarked protocol across a wide range of chemical systems, it enables scalable, quantum-chemistry-driven predictions of protonation behavior for small and large molecules alike. Crucial for understanding charge-dependent properties, pKaPredictor supports applications in drug discovery, formulation science, and materials design with precision and ease.
+    keywords: ["pKa", "protonation", "solvation", "DFT", "Organic molecules", "Ionization"]
+    industry: ["Pharmaceutical", "Materials Science"]
+    function: ["Formulations Design"]
+    technology: ["Quantum Chemistry", "DFT-based Modelling"]
+    usecase: ["Charge Prediction", "Solubility Optimization", "Formulation Design"]
+    links:
+      # - title: "User Guide"
+      #   url: "/overview/enzyme-platform"
+      - title: "Try the App"
+        url: "/tools/catalyst-screening"  
+      - title: "Know More"
+        url: "https://drive.google.com/file/d/1_DJfjr0l6zu3WCdaix6s-pqjpOQiRnsv/view"      
   
   # drug-solubility-prediction:
   #   imageURL: "/images/projects/drug-solubility.jpg"
